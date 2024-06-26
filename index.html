@@ -1,1 +1,33 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <header class="titulo">
+       <img class="titulo_logo" src="./assets/logo-TextEncriptador.png">
+        <h1 class="titulo_texto"></h1> 
+    </header>
+    <main>
+        <div class="caja_botones">
+           <button  class="boton_encriptar">Encriptar</button>
+            <button class="boton_desencriptar">Desencriptar</button> 
+        </div>
+        
+        <textarea id="ingreso_texto"  onchange="encriptarValor()" placeholder="Ingrese el texto aqui"></textarea>
+        <div id="salida_texto">
+            <p id="parrafoSalidaTexto"></p>
+            <img id="imagenSalidaTexto" class="salida_texto_imagen" src="./assets/img-noSeEncuentraTexto.png">
+        </div>
+        <button id="botonCopiar" onclick="esconderDisplay()" class="boton_copiar">Copiar</button>
+    </main>
+   
+    <footer>
+        <p>Desarrollado por Rossy Palacin</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

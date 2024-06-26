@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --color-primario: #eed5c7/*#000000*/;
+    --color-secundario: #121481/*#F6F6F6*/;
+    --color-terciario: #df7e7e /*#22D4FD*/;
+    --color-hover: #FFCBCB /*#272727*/;
+
+    --fuente-courier: "Courier Prime", monospace;
+    --fuente-chewy: 'Chewy', sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgba(255, 192, 203, 0.781);
+}
+
+.titulo{
+    width: 100%;
+}
+
+.titulo_logo{
+    width: 20%;
+    margin-top: -60px;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -100px;
+}
+
+.caja_botones{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 15%;
+}
+
+.boton_encriptar{
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    font-family: var(--fuente-chewy);
+    font-size: 30px;
+}
+
+.boton_desencriptar{
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    font-family: var(--fuente-chewy);
+    font-size: 30px;
+}
+
+
+#ingreso_texto{
+    width: 20%;
+    height: 400px;
+    padding: 50px;
+    border-radius: 50px;
+    font-family: var(--fuente-chewy);
+    font-size: 30px;
+}
+
+#salida_texto{
+    width: 20%;
+    height: 400px;
+    padding: 50px;
+    border-radius: 50px;
+    font-family: var(--fuente-chewy);
+    font-size: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.salida_texto_imagen{
+    width: 100%;
+}
+
+.boton_copiar{
+    width: 15%;
+    height: 50px;
+    border-radius: 50px;
+    font-family: var(--fuente-chewy);
+    font-size: 30px;
+}
+
+footer{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 0;
+    background-color: #df7e7e;
+    font-family: var(--fuente-chewy);
+}
