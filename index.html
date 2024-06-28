@@ -5,24 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
     <link rel="stylesheet" href="style.css" >
+    <script src="https://kit.fontawesome.com/d8c748ce1c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="titulo">
-       <img class="titulo_logo" src="./assets/logo-TextEncriptador.png">
+       <img class="titulo_logo" src="./assets/Logo.png">
         <h1 class="titulo_texto"></h1> 
     </header>
     <main>
-        <div class="caja_botones">
-           <button  class="boton_encriptar">Encriptar</button>
-            <button class="boton_desencriptar">Desencriptar</button> 
+        <div class="caja_textarea_botones">
+            <textarea id="ingreso_texto"  onchange="encriptarValor()" placeholder="Ingrese el texto aqui"></textarea>
+            <p class="caja_textarea_botones_parrafo"><i class="fa-solid fa-circle-info"></i>Solo letras minúsculas y sin acentos</p>
+            <div class="caja_botones">
+                <button  class="boton_encriptar">Encriptar</button>
+                <button class="boton_desencriptar">Desencriptar</button> 
+            </div>
         </div>
         
-        <textarea id="ingreso_texto"  onchange="encriptarValor()" placeholder="Ingrese el texto aqui"></textarea>
+        
         <div id="salida_texto">
             <p id="parrafoSalidaTexto"></p>
-            <img id="imagenSalidaTexto" class="salida_texto_imagen" src="./assets/img-noSeEncuentraTexto.png">
+            <div id="salida-texto-caja">
+                <img id="imagenSalidaTexto" class="salida_texto_imagen" src="./assets/Muñeco.png">
+                <h2 class="texto1_salida_texto">Ningún mensaje fue encontrado</h2>
+                <p class="texto2_salida_texto">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+            
+            <button id="botonCopiar"  class="boton_copiar">Copiar</button>
+
         </div>
-        <button id="botonCopiar" onclick="esconderDisplay()" class="boton_copiar">Copiar</button>
     </main>
    
     <footer>

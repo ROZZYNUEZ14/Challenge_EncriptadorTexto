@@ -1,11 +1,14 @@
-const cajaSalidaTexto = document.getElementById("salida_texto");
+const cajaSalidaTexto = document.getElementById("salida-texto-caja");
 const imagenCajaSalidaTexto = document.getElementById("imagenSalidaTexto");
 const cajaEntradaTexto = document.getElementById("ingreso_texto");
-const parrafoSalidaTexto = document.getElementById("parrafoSalidaTexto")
+const parrafoSalidaTexto = document.getElementById("parrafoSalidaTexto");
+const botonCopiar = document.getElementById("botonCopiar")
 
 
-function esconderDisplay() {
-    imagenCajaSalidaTexto.style.display = "none";
+function display() {
+    cajaSalidaTexto.style.display = "none";
+    botonCopiar.style.display = "block";
+    
 }
 
 
@@ -28,9 +31,9 @@ function encriptarValor(){
     console.log(cajaEntradaTexto.value);
     console.log(textoEncriptado)
     
-    parrafoSalidaTexto.innerText = textoEncriptado
+    parrafoSalidaTexto.innerHTML = textoEncriptado
 
-    esconderDisplay();
+    display();
 }
 
 
