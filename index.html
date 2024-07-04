@@ -14,11 +14,11 @@
     </header>
     <main>
         <div class="caja_textarea_botones">
-            <textarea id="ingreso_texto"  onchange="encriptarValor()" placeholder="Ingrese el texto aqui"></textarea>
+            <textarea id="ingreso_texto"   placeholder="Ingrese el texto aqui"></textarea>
             <p class="caja_textarea_botones_parrafo"><i class="fa-solid fa-circle-info"></i>Solo letras minúsculas y sin acentos</p>
             <div class="caja_botones">
-                <button  class="boton_encriptar">Encriptar</button>
-                <button class="boton_desencriptar">Desencriptar</button> 
+                <button  class="boton_encriptar" onclick="botonEncriptar()">Encriptar</button>
+                <button class="boton_desencriptar" onclick="botonDesencriptar()">Desencriptar</button> 
             </div>
         </div>
         
@@ -31,7 +31,7 @@
                 <p class="texto2_salida_texto">Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
             
-            <button id="botonCopiar"  class="boton_copiar">Copiar</button>
+            <button id="botonCopiar"  class="boton_copiar" onclick="copiarTexto()">Copiar</button>
 
         </div>
     </main>

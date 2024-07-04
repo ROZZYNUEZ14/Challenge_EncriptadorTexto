@@ -46,12 +46,85 @@ function encriptarValor(){
     
     let textoEncriptado = resultadoEncriptado.join(" ");
     console.log(textoEncriptado);
-    parrafoSalidaTexto.innerHTML = textoEncriptado;
+    //parrafoSalidaTexto.innerHTML = textoEncriptado;
     
-    display();
+    //display()
 
     return textoEncriptado;
     
 }
 
+function botonEncriptar(){
+    parrafoSalidaTexto.innerHTML = encriptarValor();
+    display();
+    return parrafoSalidaTexto;
+}
 
+function botonDesencriptar(){
+    //let obtenerTextoDesencriptar = parrafoSalidaTexto.innerHTML;
+    let obtenerTextoDesencriptar = cajaEntradaTexto.value;
+    console.log(obtenerTextoDesencriptar)
+    let textoObtenidoArray = obtenerTextoDesencriptar.split(" ");
+    let resultadoDesencriptado = [];
+
+    for(let i = 0; i < textoObtenidoArray.length; i++){
+        let palabraObtenida = textoObtenidoArray[i];
+        
+        let palabraNormalizada = palabraObtenida.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+
+        let textoVocalesDes = palabraNormalizada.replace(/ai/g, "{a}")
+                                                .replace(/enter/g, "{e}")
+                                                .replace(/imes/g, "{i}")
+                                                .replace(/ober/g, "{o}")
+                                                .replace(/ufat/g, "{u}")
+
+        let palabraDesencriptada = textoVocalesDes.replace(/{a}/g, "a")
+                                            .replace(/{e}/g, "e")
+                                            .replace(/{i}/g, "i")
+                                            .replace(/{o}/g, "o")
+                                            .replace(/{u}/g, "u")
+        
+        resultadoDesencriptado.push(palabraDesencriptada);
+        
+    }
+    
+    
+    console.log(cajaEntradaTexto.value);
+    
+    let textoDesencriptado = resultadoDesencriptado.join(" ");
+    console.log(textoDesencriptado);
+    parrafoSalidaTexto.innerHTML = textoDesencriptado;
+    
+    //display()
+
+    return parrafoSalidaTexto;
+    
+}
+
+/*
+function botonCopiar(){
+    let copiarTexto = parrafoSalidaTexto.innerHTML;
+    copiarTexto.document.execCommand("copy");
+    console.log(copiarTexto);
+}
+    */
+
+async function copiarTexto() {
+    try {
+      await navigator.clipboard.writeText(parrafoSalidaTexto.innerHTML);
+      console.log("Texto copiado al portapapeles")
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+//writeText(parrafoSalidaTexto.innerHTML)
+/*
+function copiarTexto() {
+    navigator.clipboard.writeText(parrafoSalidaTexto.innerHTML).then(() => {
+        console.log("Texto copiado al portapapeles");
+    }).catch(error => {
+        console.error("Error al copiar el texto: ", error);
+    });
+}
+    */
