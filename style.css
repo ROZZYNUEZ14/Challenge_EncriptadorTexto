@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap');
 :root{
     --color-primario: #0A3871/*#000000*/;
     --color-secundario: #343A40/*#F6F6F6*/;
@@ -111,7 +112,7 @@ i{
 #salida_texto{
     width: 22%;
     height: 720px;
-    padding: 0px;
+    padding:0px 15px;
     margin-top: -50px;
     border-radius: 50px;
     font-family: var(--fuente-Inter);
@@ -176,13 +177,33 @@ i{
 }
 
 footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
     width: 100%;
+    height: 30px;
+    /*
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: center;
+    */
+    
+    /*
     margin-top: 35px;
     margin-bottom: 0;
-    display: block;
-    background-color: #df7e7e;
+    */
+    background-color: transparent;
     font-family: var(--fuente-Inter);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-secundario);
+    font-family: "Playwrite AT", cursive;
+}
+
+#githubImg, #linkedinImg{
+    
+    width: 20px;
+    height: 20px;
+    margin:5px;
 }
