@@ -16,7 +16,9 @@
         <div class="caja_textarea_botones">
             <textarea id="ingreso_texto"   placeholder="Ingrese el texto aqui"></textarea>
             <p class="caja_textarea_botones_parrafo"><i class="fa-solid fa-circle-info"></i>Solo letras minúsculas y sin acentos</p>
-            
+            <p id="errorMayusculas"><i class="fa-solid fa-triangle-exclamation"></i>No puedes ingresar palabras Mayúsculas</p>
+            <p id="errorCaracteresEspeciales"><i class="fa-solid fa-triangle-exclamation"></i>No puedes ingresar caracteres especiales</p>
+            <p id="errorTildes"><i class="fa-solid fa-triangle-exclamation"></i>No puedes ingresar palabras que incluyan tilde</p>
             <div class="caja_botones">
                 <button  class="boton_encriptar" onclick="botonEncriptar()">Encriptar</button>
                 <button class="boton_desencriptar" onclick="botonDesencriptar()">Desencriptar</button> 

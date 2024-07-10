@@ -2,8 +2,10 @@ const cajaSalidaTexto = document.getElementById("salida-texto-caja");
 const imagenCajaSalidaTexto = document.getElementById("imagenSalidaTexto");
 const cajaEntradaTexto = document.getElementById("ingreso_texto");
 const parrafoSalidaTexto = document.getElementById("parrafoSalidaTexto");
-const botonCopiar = document.getElementById("botonCopiar")
-
+const botonCopiar = document.getElementById("botonCopiar");
+const errorMayusculas = document.getElementById("errorMayusculas");
+const errorCaracteresEspeciales = document.getElementById("errorCaracteresEspeciales");
+const errorTildes = document.getElementById("errorTildes");
 
 function display() {
     cajaSalidaTexto.style.display = "none";
@@ -11,6 +13,9 @@ function display() {
     
 }
 
+errorMayusculas.style.display = 'none';
+errorCaracteresEspeciales.style.display = 'none';
+errorTildes.style.display = 'none';
 
 function encriptarValor(){
     let valorTexto = cajaEntradaTexto.value
@@ -24,26 +29,29 @@ function encriptarValor(){
         //let primeraLetra = palabra.charAt(0);
 
         if(palabra !== palabra.toLowerCase()){
-            alert("Ingresa solo palabras en minusculas");
+            //alert("Ingresa solo palabras en minusculas");
             let mensajeError = "No hay texto válido que mostrar";
-            //resultadoEncriptado.push(mensajeError);
-            //return resultadoEncriptado;
+            errorMayusculas.style.display = 'block';
             return mensajeError;
             
         }else if(caracteresEspeciales.test(palabra)){
-            alert("Solo ingresar palabras, no caracteres especiales.");
+            //alert("Solo ingresar palabras, no caracteres especiales.");
             let mensajeError2 = "No hay texto válido que mostrar";
-            //resultadoEncriptado.push(mensajeError2);
-            //return resultadoEncriptado;
+            errorCaracteresEspeciales.style.display = 'block';
             return mensajeError2;
         }else{
-            //let palabraNormalizada = palabra.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+            
             if(vocalConTilde.test(palabra)){
-                alert("Evita ingresar palabras con tildes");
+                //alert("Evita ingresar palabras con tildes");
                 let mensajeError3 = "No hay texto válido que mostrar";
+                errorTildes.style.display = 'block';
                 return mensajeError3;
             
             }else{
+                errorMayusculas.style.display = 'none';
+                errorCaracteresEspeciales.style.display = 'none';
+                errorTildes.style.display = 'none';
+
                 let palabraNormalizada = palabra;
                 let textoVocales = palabraNormalizada.replace(/[a]/g, "{a}")
                                                     .replace(/[e]/g, "{e}")
@@ -68,9 +76,6 @@ function encriptarValor(){
 
     let textoEncriptado = resultadoEncriptado.join(" ");
     console.log(textoEncriptado);
-    //parrafoSalidaTexto.innerHTML = textoEncriptado;
-    
-    //display()
 
     return textoEncriptado;
     
@@ -80,13 +85,12 @@ function encriptarValor(){
 function botonEncriptar(){
     parrafoSalidaTexto.innerHTML = encriptarValor();
     display();
-    //let verificandoSiHayParrafo  = (parrafoSalidaTexto.innerHTML === "") ? verificandoSiHayParrafo() : "No encontramos un texto valido"
-    //return verificandoSiHayParrafo;
+    
     return parrafoSalidaTexto;
 }
 
 function botonDesencriptar(){
-    //let obtenerTextoDesencriptar = parrafoSalidaTexto.innerHTML;
+
     let obtenerTextoDesencriptar = cajaEntradaTexto.value;
     console.log(obtenerTextoDesencriptar)
     let textoObtenidoArray = obtenerTextoDesencriptar.split(" ");
@@ -120,7 +124,6 @@ function botonDesencriptar(){
     console.log(textoDesencriptado);
     parrafoSalidaTexto.innerHTML = textoDesencriptado;
     
-    //display()
 
     return parrafoSalidaTexto;
     
