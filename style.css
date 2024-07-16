@@ -26,7 +26,7 @@ body{
 
 .titulo_logo{
     width: 7%;
-    margin-top: 15px;
+    margin-top: 20px;
     margin-left: 10px;
 }
 
@@ -52,11 +52,16 @@ main{
     height: 67px;
     border-radius: 24px;
     font-family: var(--fuente-Inter);
-    font-size: 16px;
+    font-size: 1.05rem;
     color: var(--color-cuartario);
     background-color: var(--color-primario);
     border-style: solid;
     border-color: var(--color-primario);
+}
+
+.boton_encriptar:hover{
+    background-color: #b2b4b6;
+    color: var(--color-primario);
 }
 
 .boton_desencriptar{
@@ -64,13 +69,16 @@ main{
     height: 67px;
     border-radius: 24px;
     font-family: var(--fuente-Inter);
-    font-size: 16px;
+    font-size: 1.05rem;
     color: var(--color-primario);
     background-color: var(--color-cuartario);
     border-style: solid;
     border-color: var(--color-primario);
 }
-
+.boton_desencriptar:hover{
+    background-color: #b2b4b6;
+    color: var(--color-primario);
+}
 .caja_textarea_botones_parrafo{
     color: var(--color-terciario);
     font-family: var(--fuente-Inter);
@@ -88,7 +96,7 @@ i{
     font-family: var(--fuente-Inter);
     font-size: 12px;
     font-weight: 400;
-    margin: 10px 40px 20px;
+    margin: 10px 40px 10px;
 }
 
 .caja_textarea_botones{
@@ -123,7 +131,7 @@ i{
     align-items: center;
     flex-direction: column;
     position: relative;
-    
+    box-shadow: 0px 4px  15px rgba(0, 0, 0, 0.2);
 }
 
 #parrafoSalidaTexto{
@@ -131,14 +139,18 @@ i{
     height: 550px;
     margin-top: 20px;
     text-align:left;
-    font-size: 1.5rem;
+    font-size: 1.05rem;
     color: var(--color-terciario);
     padding: 20px;
+    max-height: 500px;
+    overflow-y: auto ;
     
 }
 #salida-texto-caja{
     height: 600px;
     margin-top: 130px;
+    padding: 20px;
+    
 }
 .salida_texto_imagen{
     width: 100%;
@@ -156,7 +168,7 @@ i{
     text-align: center;
     font-family: var(--fuente-Inter);
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.05rem;
     color: var(--color-terciario);
 }
 
@@ -165,7 +177,7 @@ i{
     height: 67px;
     border-radius: 24px;
     font-family: var(--fuente-Inter);
-    font-size: 16px;
+    font-size: 1.05rem;
     color: var(--color-primario);
     background-color: var(--color-cuartario);
     border-style: solid;
@@ -174,6 +186,11 @@ i{
     position: absolute;
     bottom: 20px;
     display: none;
+}
+
+.boton_copiar:hover{
+    background-color: var(--color-primario);
+    color: var(--color-cuartario);
 }
 
 footer{
@@ -206,4 +223,283 @@ footer{
     width: 20px;
     height: 20px;
     margin:5px;
+}
+
+@media (max-height: 700px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .titulo_logo{
+        width: 7%;
+        margin-top: 45px;
+        margin-left: 10px;
+    }
+    
+    main{
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 0px;
+        
+    }
+    
+    .caja_textarea_botones{
+        width: 60%;
+    }
+    #ingreso_texto{
+        width: 100%;
+        height: 400px;
+        padding: 50px;
+        margin-top: -30px;
+        border-radius: 50px;
+        font-family: var(--fuente-Inter);
+        font-size: 32px;
+        background-color: transparent;
+        border:none;
+        outline: none;
+    }
+    #parrafoSalidaTexto{
+        padding: 0px;
+        margin-top: 40px;
+        max-height: 400px;
+        overflow-y: auto ;
+        text-align: center;
+    }
+    #salida_texto{
+        width: 22%;
+        height: 600px;
+        padding:0px 15px;
+        margin-top: -30px;
+        border-radius: 50px;
+        font-family: var(--fuente-Inter);
+        font-size: 30px;
+        background-color: white;
+        display: flex;
+        
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        
+    }
+}
+
+@media (max-height: 610px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .titulo_logo{
+        width: 7%;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    
+    main{
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 0px;
+        
+    }
+    
+    .caja_textarea_botones{
+        width: 60%;
+    }
+    #ingreso_texto{
+        width: 100%;
+        height: 360px;
+        padding: 50px;
+        margin-top: -60px;
+        border-radius: 50px;
+        font-family: var(--fuente-Inter);
+        font-size: 32px;
+        background-color: transparent;
+        border:none;
+        outline: none;
+    }
+    #parrafoSalidaTexto{
+        padding: 0px;
+        margin-top: 40px;
+        max-height: 400px;
+        overflow-y: auto ;
+        text-align: center;
+    }
+    #salida_texto{
+        width: 22%;
+        height: 550px;
+        padding:0px 15px;
+        margin-top: -30px;
+        border-radius: 50px;
+        font-family: var(--fuente-Inter);
+        font-size: 30px;
+        background-color: white;
+        display: flex;
+        
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        /*
+        padding-top: 10px;
+        padding-bottom: 10px;
+        */
+        
+        /*
+        margin-top: 35px;
+        margin-bottom: 0;
+        */
+        background-color: transparent;
+        font-family: var(--fuente-Inter);
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--color-secundario);
+        font-family: "Playwrite AT", cursive;
+    }
+}
+
+@media (max-width: 768px){
+    .titulo_logo{
+        width: 20%;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+    main{
+        flex-direction: column;
+    }
+    .salida_texto_imagen{
+        display: none;
+    }
+    #salida_texto{
+        width: 80%;
+        height: 220px;
+        padding: 5px;
+        margin-top: 0px;
+    }
+    .texto1_salida_texto{
+        text-align: center;
+        font-size: 1.75rem;
+        margin-bottom: 10px;
+        margin-top: -50px;
+    }
+    .texto2_salida_texto{
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.25rem;
+    }
+    #parrafoSalidaTexto{
+        position: absolute;
+        
+        margin-top: 5px;
+        font-size: 1.25rem;
+        padding: 20px;
+        max-height: 80px;
+        overflow-y: auto ;
+    }
+
+    .caja_textarea_botones{
+        width: 90%;
+        margin-top: 40px;
+        
+    }
+    
+}
+
+@media (max-width: 375px){
+    .titulo_logo{
+        width: 20%;
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+    main{
+        flex-direction: column;
+    }
+    .salida_texto_imagen{
+        display: none;
+    }
+    #salida_texto{
+        width: 80%;
+        height: 220px;
+        padding: 5px;
+        margin-top: -50px;
+    }
+    .texto1_salida_texto{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        margin-top: -100px;
+    }
+    .texto2_salida_texto{
+        text-align: center;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    #parrafoSalidaTexto{
+        position: absolute;
+        
+        margin-top: 5px;
+        font-size: 1.25rem;
+        padding: 20px;
+        max-height: 80px;
+        overflow-y: auto ;
+    }
+
+    .caja_textarea_botones{
+        width: 90%;
+        margin-top: 20px;
+        
+    }
+
+    #ingreso_texto{
+        height: 260px;
+        width: 90%;
+        padding: 15px;
+
+    }
+    .caja_botones{
+        flex-direction: column;
+        align-items: center;
+    }
+    .boton_encriptar, .boton_desencriptar{
+        width: 90%;
+    }
 }
