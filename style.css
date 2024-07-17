@@ -216,11 +216,9 @@ footer{
     font-family: "Playwrite AT", cursive;
 }
 
-#githubImg, #linkedinImg{
-    
-    width: 20px;
-    height: 20px;
-    margin:5px;
+.fa-brands.fa-github, .fa-brands.fa-linkedin{
+    font-size: 20px;
+    color: var(--color-secundario);
 }
 
 @media (max-height: 700px){
