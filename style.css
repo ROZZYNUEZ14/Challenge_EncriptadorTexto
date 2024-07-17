@@ -18,6 +18,7 @@
 }
 body{
     background-color: var(--color-fondo);
+    height: auto;
 }
 
 .titulo{
@@ -155,6 +156,7 @@ i{
     
 }
 .salida_texto_imagen{
+    margin-top: -60px;
     width: 100%;
 }
 
@@ -498,6 +500,24 @@ footer{
     .boton_encriptar, .boton_desencriptar{
         width: 90%;
     }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        margin-top: 35px;
+        margin-bottom: 0px;
+        */
+        background-color: transparent;
+        font-family: var(--fuente-Inter);
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--color-secundario);
+        font-family: "Playwrite AT", cursive;
+    }
 }
 
 @media (max-width: 375px){
@@ -568,7 +588,7 @@ footer{
         width: 100%;
         height: 30px;
         margin-top: 35px;
-        margin-bottom: 0;
+        margin-bottom: 0px;
         */
         background-color: transparent;
         font-family: var(--fuente-Inter);
